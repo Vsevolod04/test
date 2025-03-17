@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../styles/style.css">
+    <link rel="stylesheet" type="text/css" href="../styles/blog_page/content.css">
+    <link rel="stylesheet" type="text/css" href="../styles/blog_page/modalWindow.css">
+    <link rel="stylesheet" type="text/css" href="../styles/blog_page/pagination.css">
+    <script src="../scripts/blog_script.js"></script>
+    <title>Блог</title>
+    <link rel="icon" type="image/png" href="icon/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="/icon/favicon.ico">
+    <link rel="shortcut icon" href="/icon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="icon/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+</head>
+
+<body>
+    <header>
+        <div class="mobile-header">
+            <div class="logo">.KoSo</div>
+            <div class="menu-toggle">&#9776;</div>
+        </div>
+
+        <section class="menu">
+            <h2 class="logo">.KoSo</h2>
+            <nav class="navbar">
+                <a href="../index.html">Главная</a>
+                <a href="about.html">О нас</a>
+                <a href="services.html">Услуги</a>
+                <a href="blog.html" class="active">Блог</a>
+                <a href="projects.html">Проекты</a>
+                <a href="contact.html">Контакты</a>
+            </nav>
+            <div class="links">
+                <a href="#"><img src="../assets/svg/inst.svg" alt="inst"></a>
+                <a href="#"><img src="../assets/svg/tg.svg" alt="tg"></a>
+                <a href="#"><img src="../assets/svg/linkedin.svg" alt="linkedin"></a>
+            </div>
+            <div class="copyright">
+                Copyright &copy;2025 Sorkin and Kovsher. All rights reserved.
+            </div>
+        </section>
+    </header>
+
+    <main>
+        <section class="page_title">
+            <h1><i>Блог</i></h1>
+            <p>ЧИТАЙТЕ НАШ БЛОГ</p>
+        </section>
+
+        <!-- Кнопка для открытия модального окна -->
+        <button type="button" id="openModalButton">Добавить новую карточку</button>
+
+        <!-- Модальное окно -->
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Добавить новую карточку</h2>
+                <form id="addCardForm">
+                    <label for="imageInput">Выберите фото:</label>
+                    <input type="file" id="imageInput" accept="image/*" required>
+                    <label for="captionInput">Подпись:</label>
+                    <input type="text" id="captionInput" maxlength="50" placeholder="Введите подпись" required>
+                    <label for="dateInput">Дата:</label>
+                    <input type="date" id="dateInput" min="2000-01-01" max="2200-01-01" required>
+                    <button type="submit">ОК</button>
+                    <button type="button" id="closeModalButton">Отмена</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Контейнер для карточек блога -->
+        <div class="blog" id="blogContainer">
+            <!-- Пример карточки -->
+            <div class="blog_block">
+                <img src="../assets/photos/blog1.png" alt="blog_photo">
+                <p><i>10 Февраля, 2025</i></p>
+                <p>10 примеров сайтов-портфолио</p>
+                <img src="../assets/svg/horizontal_line.svg" alt="horizontal_line">
+            </div>
+            <div class="blog_block">
+                <img src="../assets/photos/blog2.png" alt="blog_photo">
+                <p><i>1 Февраля, 2025</i></p>
+                <p>5 советов, как работать в команде</p>
+                <img src="../assets/svg/horizontal_line.svg" alt="horizontal_line">
+            </div>
+            <div class="blog_block">
+                <img src="../assets/photos/blog3.png" alt="blog_photo">
+                <p><i>20 Января, 2025</i></p>
+                <p>Защита сайтов от кибер-атак</p>
+                <img src="../assets/svg/horizontal_line.svg" alt="horizontal_line">
+            </div>
+        </div>
+
+        <div class="pagination">
+            <button id="prevButton">Назад</button>
+            <span id="pageInfo"></span>
+            <button id="nextButton">Вперед</button>
+        </div>
+    </main>
+
+</body>
+
+</html>
